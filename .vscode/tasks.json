@@ -1,0 +1,131 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run Student Cloud app",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"--prefix",
+				"student-cloud/backend",
+				"start"
+			],
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Run Local Student Portal",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"--prefix",
+				"student-cloud/backend",
+				"start"
+			],
+			"options": {
+				"env": {
+					"DB_DRIVER": "sqlite",
+					"NODE_ENV": "development",
+					"PORT": "5002",
+					"APP_BASE_URL": "http://localhost:5002"
+				}
+			},
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Install Student Cloud dependencies",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"--prefix",
+				"student-cloud/backend",
+				"install"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check project syntax",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"--prefix",
+				"student-cloud/backend",
+				"run",
+				"check"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Test Student Cloud backend",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"--prefix",
+				"student-cloud/backend",
+				"test"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check PDF libraries",
+			"type": "shell",
+			"command": "C:\\Users\\Atul Verma\\OneDrive\\Desktop\\student-cloud\\venv\\Scripts\\python.exe",
+			"args": [
+				"-c",
+				"import importlib.util; print(importlib.util.find_spec('reportlab')); print(importlib.util.find_spec('pypdf'))"
+			],
+			"isBackground": false,
+			"group": "build"
+		},
+		{
+			"label": "Check PDF modules",
+			"type": "shell",
+			"command": "C:\\Users\\Atul Verma\\OneDrive\\Desktop\\student-cloud\\venv\\Scripts\\python.exe",
+			"args": [
+				"make_pdf.py"
+			],
+			"isBackground": false,
+			"group": "build"
+		},
+		{
+			"label": "Install PDF library",
+			"type": "shell",
+			"command": "C:\\Users\\Atul Verma\\OneDrive\\Desktop\\student-cloud\\venv\\Scripts\\python.exe",
+			"args": [
+				"-m",
+				"pip",
+				"install",
+				"--quiet",
+				"reportlab",
+				"pypdf"
+			],
+			"isBackground": false,
+			"group": "build"
+		},
+		{
+			"label": "Build Student Portal PDF",
+			"type": "shell",
+			"command": "C:\\Users\\Atul Verma\\OneDrive\\Desktop\\student-cloud\\venv\\Scripts\\python.exe",
+			"args": [
+				"make_pdf.py"
+			],
+			"isBackground": false,
+			"group": "build"
+		},
+		{
+			"label": "Verify Student Portal PDF",
+			"type": "shell",
+			"command": "C:\\Users\\Atul Verma\\OneDrive\\Desktop\\student-cloud\\venv\\Scripts\\python.exe",
+			"args": [
+				"make_pdf.py"
+			],
+			"isBackground": false,
+			"group": "build"
+		}
+	]
+}
